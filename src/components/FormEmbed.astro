@@ -1,0 +1,17 @@
+---
+import { site } from '../config/site';
+interface Props { src: string; title: string; height?: number }
+const { src, title, height = 640 } = Astro.props;
+---
+{src ? (
+  <iframe data-tf={src} title={title} class="embed-frame" style={`min-height: ${height}px`} loading="lazy" allow="camera; microphone; autoplay; encrypted-media; fullscreen"></iframe>
+) : (
+  <div style="border: 1px dashed #B4BCCF; border-radius: 16px; padding: 32px; display: flex; flex-direction: column; gap: 14px; background: #FFFFFF">
+    <strong style="font-size: 18px">Formulario en preparación</strong>
+    <p style="margin: 0; color: #3B4663; line-height: 1.6">Mientras tanto, escríbenos por WhatsApp o agenda directamente una llamada.</p>
+    <div style="display: flex; gap: 12px; flex-wrap: wrap">
+      <a class="btn btn-primary" href={site.whatsapp}>Escríbenos por WhatsApp</a>
+      <a class="btn btn-outline" href={site.agendaCalendar}>Agendar una llamada</a>
+    </div>
+  </div>
+)}

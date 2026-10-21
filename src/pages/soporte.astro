@@ -1,0 +1,14 @@
+---
+import Base from '../layouts/Base.astro';
+import FormEmbed from '../components/FormEmbed.astro';
+import { forms, site } from '../config/site';
+---
+<Base title="Soporte" description="Soporte para clientes y evaluados de Softmetrics.">
+  <section style="padding: 56px 0 88px">
+    <div class="wrap" style="display: flex; flex-direction: column; gap: 24px; max-width: 880px">
+      <h1 class="big" style="font-size: 40px; font-weight: 800; margin: 0; letter-spacing: -0.02em">Soporte</h1>
+      <p style="margin: 0; font-size: 17px; line-height: 1.6; color: var(--ink-2)">¿Tienes un problema con una evaluación, un informe o un pago? Cuéntanos y te respondemos en horario hábil. Para algo urgente, <a href={site.whatsapp} style="font-weight: 600">escríbenos por WhatsApp</a>.</p>
+      <FormEmbed src={forms.soporte} title="Soporte" height={600} />
+    </div>
+  </section>
+</Base>

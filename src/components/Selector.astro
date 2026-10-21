@@ -1,0 +1,59 @@
+---
+import { selector } from '../config/site';
+const chev = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="m9 18 6-6-6-6"></path></svg>';
+const withParams = (href: string, rol: string, k: number) => {
+  const [path, hash] = href.split('#');
+  const sep = path.includes('?') ? '&' : '?';
+  return `${path}${sep}rol=${rol}&problema=${k}${hash ? '#' + hash : ''}`;
+};
+const optStyle = 'display: flex; justify-content: space-between; align-items: center; gap: 12px; width: 100%; min-height: 50px; padding: 10px 18px; border-radius: 12px; border: 1px solid #E1E5EE; background: #FFFFFF; color: #011D66; font-family: inherit; font-size: 16px; font-weight: 600; line-height: 1.35; text-align: left; text-decoration: none; cursor: pointer';
+---
+<div data-selector>
+  <div data-step1 style="display: flex; flex-direction: column; gap: 12px">
+    <h2 style="font-size: 24px; line-height: 1.25; font-weight: 700; margin: 0; letter-spacing: -0.02em">¿Quién eres?</h2>
+    {selector.map((r) => (
+      <button type="button" data-role={r.id} style={optStyle}><span>{r.label}</span><Fragment set:html={chev} /></button>
+    ))}
+  </div>
+  {selector.map((r) => (
+    <div data-step2={r.id} hidden style="display: flex; flex-direction: column; gap: 12px">
+      <button type="button" data-reset style="align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px 0 8px; border-radius: 999px; border: 1px solid #E1E5EE; background: #F4F6FB; color: #3B4663; font-family: inherit; font-size: 14px; cursor: pointer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>{r.label}
+      </button>
+      <h2 style="font-size: 24px; line-height: 1.25; font-weight: 700; margin: 0; letter-spacing: -0.02em">¿Qué quieres resolver?</h2>
+      {r.problems.map((q, i) => (
+        <a href={withParams(q.href, r.id, i + 1)} data-rol={r.id} data-problema={i + 1} data-solucion={q.offer} style={optStyle}><span>{q.label}</span><Fragment set:html={chev} /></a>
+      ))}
+    </div>
+  ))}
+</div>
+<style>
+  [data-selector] button:hover, [data-selector] a:hover { border-color: var(--accent) !important; }
+  [data-step2][hidden] { display: none !important; }
+  [data-step1][hidden] { display: none !important; }
+</style>
+<script is:inline>
+  (function () {
+    var root = document.querySelector('[data-selector]');
+    if (!root) return;
+    var step1 = root.querySelector('[data-step1]');
+    var label = document.querySelector('[data-step]');
+    function show(id) {
+      step1.hidden = !!id;
+      root.querySelectorAll('[data-step2]').forEach(function (el) { el.hidden = el.getAttribute('data-step2') !== id; });
+      if (label) label.textContent = id ? 'Paso 2 de 2' : 'Paso 1 de 2';
+    }
+    root.querySelectorAll('[data-role]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        show(b.getAttribute('data-role'));
+        window.va && window.va('event', { name: 'selector_rol', data: { rol: b.getAttribute('data-role') } });
+      });
+    });
+    root.querySelectorAll('[data-reset]').forEach(function (b) { b.addEventListener('click', function () { show(null); }); });
+    root.querySelectorAll('a[data-solucion]').forEach(function (a) {
+      a.addEventListener('click', function () {
+        window.va && window.va('event', { name: 'selector_problema', data: { rol: a.dataset.rol, problema: a.dataset.problema, solucion: a.dataset.solucion } });
+      });
+    });
+  })();
+</script>

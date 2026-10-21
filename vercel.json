@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/asociados", "destination": "https://softmetrics.typeform.com/pedidos", "permanent": false },
+    { "source": "/consultores", "destination": "/soluciones/selecciona-consultores", "permanent": false }
+  ]
+}

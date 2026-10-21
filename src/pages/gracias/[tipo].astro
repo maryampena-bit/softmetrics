@@ -1,0 +1,21 @@
+---
+import Base from '../../layouts/Base.astro';
+import evaluacion from '../../content/gracias-evaluacion.html?raw';
+import orientacion from '../../content/gracias-orientacion.html?raw';
+import agenda from '../../content/gracias-agenda.html?raw';
+import radar from '../../content/gracias-radar.html?raw';
+import consultores from '../../content/gracias-consultores.html?raw';
+const pages = { evaluacion, orientacion, agenda, radar, consultores } as Record<string, string>;
+export function getStaticPaths() {
+  return ['evaluacion', 'orientacion', 'agenda', 'radar', 'consultores'].map((tipo) => ({ params: { tipo } }));
+}
+const { tipo } = Astro.params;
+const html = pages[tipo as string].replace('href="/recursos"', 'href="/"').replace('>Ver recursos<', '>Volver al inicio<');
+---
+<Base title="Gracias">
+  <section style="background: #F4F6FB; padding: 72px 0 96px">
+    <div class="wrap" style="max-width: 760px">
+      <Fragment set:html={html} />
+    </div>
+  </section>
+</Base>

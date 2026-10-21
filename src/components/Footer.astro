@@ -1,0 +1,29 @@
+---
+import { site, soluciones } from '../config/site';
+---
+<footer class="site-footer">
+  <div class="wrap" style="display: flex; flex-direction: column; gap: 40px">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; font-size: 15px">
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <img src="/img/logo-blanco.svg" alt="Softmetrics" width="166" height="30" style="height: 30px; width: auto; display: block; align-self: flex-start" />
+        <span style="line-height: 1.5">{site.tagline}</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <span style="font-weight: 600; color: #FFFFFF">Soluciones</span>
+        {soluciones.map((s) => <a href={s.href}>{s.label}</a>)}
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <span style="font-weight: 600; color: #FFFFFF">Contacto</span>
+        <a href="/agenda">Agenda una conversación</a>
+        <a href={site.whatsapp}>WhatsApp</a>
+        <a href={`mailto:${site.email}`}>{site.email}</a>
+        <a href="/soporte">Soporte</a>
+        <a href="/asociados">Consultores asociados</a>
+      </div>
+    </div>
+    <div style="border-top: 1px solid #1E3A85; padding-top: 24px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 14px">
+      <span>© 2026 Softmetrics · Kompas Consultores KC, C.A.</span>
+      <span style="display: flex; gap: 20px"><a href="/terminos">Términos</a><a href="/privacidad">Privacidad</a></span>
+    </div>
+  </div>
+</footer>

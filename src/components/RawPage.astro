@@ -1,0 +1,10 @@
+---
+// Renderiza el contenido HTML aprobado en los mockups.
+// Si el HTML trae un marcador <!--NOMBRE-->, el slot con ese nombre lo reemplaza.
+interface Props { html: string; marker?: string }
+const { html, marker } = Astro.props;
+const parts = marker ? html.split(`<!--${marker}-->`) : [html];
+---
+<Fragment set:html={parts[0]} />
+{parts.length > 1 && <slot />}
+{parts.length > 1 && <Fragment set:html={parts[1]} />}

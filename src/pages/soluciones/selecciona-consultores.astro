@@ -1,0 +1,8 @@
+---
+import Base from '../../layouts/Base.astro';
+import RawPage from '../../components/RawPage.astro';
+import html from '../../content/consultores.html?raw';
+---
+<Base title="Selecciona para consultores" description="Informes de selección con respaldo científico, sin montar tu propio sistema." variant="campaign">
+  <RawPage html={html} />
+</Base>

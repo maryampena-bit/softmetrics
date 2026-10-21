@@ -1,0 +1,42 @@
+---
+import Base from '../../layouts/Base.astro';
+import FormEmbed from '../../components/FormEmbed.astro';
+import { forms, site } from '../../config/site';
+const opciones = [
+  ['Individual · reporte básico', 'USD 35', 'Requiere el perfil de competencias del cargo'],
+  ['Individual · pack de reportes', 'USD 50', 'Factores conductuales y competencias'],
+  ['Terna · reporte básico', 'USD 90', '3 candidatos'],
+  ['Terna · reporte especial', 'USD 120', '3 candidatos, conductual y competencias'],
+  ['Terna · comparativo', 'USD 150', '3 candidatos, con recomendaciones'],
+];
+---
+<Base title="Pide una evaluación" description="Haz tu pedido de evaluación de candidatos en línea: individual desde USD 35 o terna de 3 candidatos.">
+  <section style="background: var(--accent-tint); padding: 56px 0 88px">
+    <div class="wrap" style="display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap">
+      <div style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 20px; max-width: 420px">
+        <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent)">Evaluaciones bajo demanda</span>
+        <h1 class="big" style="font-size: 40px; line-height: 1.1; font-weight: 800; margin: 0; letter-spacing: -0.02em">Haz tu pedido</h1>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: var(--ink-2)">Elige el tipo de pedido, carga los datos del candidato y adjunta el comprobante de pago.</p>
+        <div style="background: #FFFFFF; border-radius: 14px; padding: 22px; display: flex; flex-direction: column; gap: 12px">
+          {opciones.map(([n, p, d]) => (
+            <div style="display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px solid #EAEDF4; padding-bottom: 10px">
+              <span style="display: flex; flex-direction: column; gap: 2px"><strong style="font-size: 15px">{n}</strong><span style="font-size: 13px; color: var(--ink-3)">{d}</span></span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 14px; white-space: nowrap">{p}</span>
+            </div>
+          ))}
+          <span style="font-size: 13px; color: var(--ink-3); line-height: 1.5">Precios sin IVA. Empresas en Venezuela: se suma el IVA (16 %).</span>
+        </div>
+        <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.5; color: var(--ink-2)">
+          <li>Pagas con PayPal, Zelle o Pago Móvil y adjuntas el comprobante o código.</li>
+          <li>Validamos el pago en 2 a 4 horas.</li>
+          <li>La invitación al candidato sale en 24 horas hábiles; el informe, 24 horas hábiles después de que responde.</li>
+          <li>¿No tienes el perfil de competencias? <a href="/recursos/perfil-de-competencias">Créalo aquí</a> o elige el pack de reportes.</li>
+        </ul>
+        <p style="margin: 0; font-size: 15px">¿Dudas? <a href={site.whatsapp} style="font-weight: 600">Escríbenos por WhatsApp</a></p>
+      </div>
+      <div style="flex: 2 1 480px">
+        <FormEmbed src={forms.pedido} title="Pedido de evaluación" height={720} />
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,10 @@
+---
+import Base from '../../layouts/Base.astro';
+import RawPage from '../../components/RawPage.astro';
+import FormEmbed from '../../components/FormEmbed.astro';
+import { forms } from '../../config/site';
+import html from '../../content/radar.html?raw';
+---
+<Base title="RADAR 2027" description="Descubre en qué capa se rompe la ejecución de tu empresa. Estudio sin costo de honorarios para empresas de más de 10 colaboradores." variant="campaign">
+  <RawPage html={html} marker="RADARFORM"><FormEmbed src={forms.radar} title="Inscripción RADAR 2027" height={560} /></RawPage>
+</Base>

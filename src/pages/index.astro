@@ -1,0 +1,9 @@
+---
+import Base from '../layouts/Base.astro';
+import RawPage from '../components/RawPage.astro';
+import Selector from '../components/Selector.astro';
+import html from '../content/inicio.html?raw';
+---
+<Base title="Softmetrics">
+  <RawPage html={html} marker="SELECTOR"><Selector /></RawPage>
+</Base>

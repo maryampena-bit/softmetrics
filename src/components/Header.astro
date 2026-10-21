@@ -1,0 +1,71 @@
+---
+import { soluciones, perfiles } from '../config/site';
+const byLabel = Object.fromEntries(soluciones.map((s) => [s.label, s]));
+const momentos = ['Seleccionar', 'Desarrollar', 'Diagnosticar'];
+const chevron = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>';
+---
+<header class="site-header">
+  <div class="wrap bar">
+    <div class="left">
+      <a href="/" aria-label="Softmetrics, inicio" style="display: inline-flex; align-items: center">
+        <img src="/img/logo.svg" alt="Softmetrics" width="166" height="30" style="height: 30px; width: auto; display: block" />
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <details class="dropdown">
+          <summary>Soluciones <Fragment set:html={chevron} /></summary>
+          <div class="panel cols-3">
+            {momentos.map((m) => (
+              <div style="display: flex; flex-direction: column; gap: 12px">
+                <span class="group-title">{m}</span>
+                {soluciones.filter((s) => s.momento === m).map((s) => (
+                  <a href={s.href}><strong>{s.label}</strong><span>{s.desc}</span></a>
+                ))}
+              </div>
+            ))}
+          </div>
+        </details>
+        <details class="dropdown">
+          <summary>Para quién <Fragment set:html={chevron} /></summary>
+          <div class="panel cols-2">
+            {perfiles.map((p) => (
+              <div style="display: flex; flex-direction: column; gap: 10px">
+                <span class="group-title">{p.label}</span>
+                {p.items.map((i) => (
+                  <a href={byLabel[i].href}><strong>{i}</strong><span>{byLabel[i].desc}</span></a>
+                ))}
+                {p.extra && <a href={p.extra.href}><strong>{p.extra.label}</strong><span>{p.extra.desc}</span></a>}
+              </div>
+            ))}
+          </div>
+        </details>
+        <a href="/soporte">Soporte</a>
+      </nav>
+    </div>
+    <div class="header-ctas">
+      <a class="btn btn-outline" href="/pedido/evaluacion">Pide una evaluación</a>
+      <a class="btn btn-primary" href="/agenda">Agenda una conversación</a>
+    </div>
+    <details class="mobile-menu">
+      <summary aria-label="Abrir menú">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+      </summary>
+      <div class="sheet">
+        <span class="sub">Soluciones</span>
+        {soluciones.map((s) => <a href={s.href}>{s.label}</a>)}
+        <span class="sub">Más</span>
+        <a href="/asociados">Consultores asociados</a>
+        <a href="/soporte">Soporte</a>
+        <a class="btn btn-outline" href="/pedido/evaluacion" style="margin-top: 12px">Pide una evaluación</a>
+        <a class="btn btn-primary" href="/agenda">Agenda una conversación</a>
+      </div>
+    </details>
+  </div>
+</header>
+<script is:inline>
+  // Un solo desplegable abierto a la vez; se cierra al hacer clic fuera.
+  document.addEventListener('click', function (e) {
+    document.querySelectorAll('.site-header details[open]').forEach(function (d) {
+      if (!d.contains(e.target)) d.removeAttribute('open');
+    });
+  });
+</script>
