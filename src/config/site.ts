@@ -12,7 +12,6 @@ export const site = {
   whatsapp: 'https://wa.me/584122443537',
   agendaCalendar: 'https://calendar.app.google/2cY9zf5WJmzWKcFq9',
   perfilAgente: 'https://gemini.google.com/gem/1YqwXhkZ2hWBwpDLc1qOrpMrACkJRDKOj?usp=sharing',
-  perfilGuia: '', // Enlace a la guía con prompt (pendiente)
 };
 
 // Formularios de Typeform. Si un valor está vacío, la página muestra
