@@ -21,7 +21,7 @@ export const forms = {
   agenda: 'https://softmetrics.typeform.com/Leads', // Typeform único de Agenda con campo oculto "solucion"
   radar: 'https://softmetrics.typeform.com/radar',
   asociados: 'https://softmetrics.typeform.com/pedidos',
-  soporte: '', // Formulario de soporte existente
+  soporte: 'https://softmetrics.typeform.com/soporte', // Formulario de soporte existente
 };
 
 export const cifras = {
