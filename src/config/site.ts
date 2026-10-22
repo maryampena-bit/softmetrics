@@ -18,7 +18,7 @@ export const site = {
 // una alternativa (WhatsApp y agenda) en lugar del formulario.
 export const forms = {
   pedido: '', // Typeform de pedido de evaluación (individual o terna)
-  agenda: '', // Typeform único de Agenda con campo oculto "solucion"
+  agenda: 'https://softmetrics.typeform.com/Leads', // Typeform único de Agenda con campo oculto "solucion"
   radar: 'https://softmetrics.typeform.com/radar',
   asociados: 'https://softmetrics.typeform.com/pedidos',
   soporte: '', // Formulario de soporte existente
