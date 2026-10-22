@@ -8,7 +8,28 @@ import { forms, site } from '../config/site';
     <div class="wrap" style="display: flex; flex-direction: column; gap: 24px; max-width: 880px">
       <h1 class="big" style="font-size: 40px; font-weight: 800; margin: 0; letter-spacing: -0.02em">Soporte</h1>
       <p style="margin: 0; font-size: 17px; line-height: 1.6; color: var(--ink-2)">¿Tienes un problema con una evaluación, un informe o un pago? Cuéntanos y te respondemos en horario hábil. Para algo urgente, <a href={site.whatsapp} style="font-weight: 600">escríbenos por WhatsApp</a>.</p>
-      <FormEmbed src={forms.soporte} title="Soporte" height={600} />
+      <div role="tablist" aria-label="Tipo de soporte" style="display: flex; gap: 10px; flex-wrap: wrap">
+        <button type="button" role="tab" class="sp-tab" data-sp="cliente" aria-selected="true">Soy cliente (empresa o consultor)</button>
+        <button type="button" role="tab" class="sp-tab" data-sp="evaluado" aria-selected="false">Soy evaluado o candidato</button>
+      </div>
+      <div data-panel="cliente"><FormEmbed src={forms.soporteCliente} title="Soporte para clientes" height={600} /></div>
+      <div data-panel="evaluado" hidden><FormEmbed src={forms.soporte} title="Soporte para evaluados" height={600} /></div>
     </div>
   </section>
+  <style>
+    .sp-tab { font: inherit; font-weight: 600; font-size: 15px; min-height: 44px; padding: 0 20px; border-radius: 999px; border: 1.5px solid #011D66; background: #FFFFFF; color: #011D66; cursor: pointer; }
+    .sp-tab[aria-selected="true"] { background: #011D66; color: #FFFFFF; }
+  </style>
+  <script is:inline>
+    (function () {
+      var tabs = document.querySelectorAll('.sp-tab');
+      function show(k) {
+        tabs.forEach(function (t) { t.setAttribute('aria-selected', t.dataset.sp === k ? 'true' : 'false'); });
+        document.querySelectorAll('[data-panel]').forEach(function (p) { p.hidden = p.dataset.panel !== k; });
+      }
+      tabs.forEach(function (t) { t.addEventListener('click', function () { show(t.dataset.sp); }); });
+      var q = new URLSearchParams(location.search).get('tipo');
+      if (q === 'evaluado' || q === 'cliente') show(q);
+    })();
+  </script>
 </Base>
