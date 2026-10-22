@@ -7,7 +7,7 @@ export const site = {
   url: 'https://softmetrics.co',
   tagline: 'Claridad sobre personas y ejecución, sin adivinar.',
   description:
-    'Ciencia, tecnología y criterio experto para CEOs y líderes de talento en Latinoamérica.',
+    'Ciencia, tecnología y criterio experto para CEOs y responsables de talento en Latinoamérica.',
   email: 'sales@softmetrics.co',
   whatsapp: 'https://wa.me/584122443537',
   agendaCalendar: 'https://calendar.app.google/2cY9zf5WJmzWKcFq9',
@@ -41,7 +41,7 @@ export const soluciones = [
 
 export const perfiles = [
   { label: 'CEO y dirección', items: ['RADAR 2027', 'Insight 360'] },
-  { label: 'Líderes de talento', items: ['Selecciona', 'Insight 360'] },
+  { label: 'Responsables de talento', items: ['Selecciona', 'Insight 360'] },
   { label: 'Empresas que contratan poco', items: ['Evaluaciones bajo demanda'] },
   { label: 'Consultores y psicólogos', items: ['Evaluaciones bajo demanda'], extra: { label: 'Consultores asociados', href: '/asociados', desc: 'Pedidos de socios comerciales' } },
 ];
@@ -55,7 +55,7 @@ export const selector = [
     { label: 'Mi equipo directivo no ve sus puntos ciegos', offer: 'Insight 360', href: '/soluciones/insight-360' },
     { label: 'Contratamos gerentes que no dan resultados', offer: 'Selecciona', href: '/soluciones/selecciona' },
   ] },
-  { id: 'talento', label: 'Líder de talento o RR. HH.', problems: [
+  { id: 'talento', label: 'Responsable de talento o RR. HH.', problems: [
     { label: 'Contratamos personas que no dan resultados', offer: 'Selecciona', href: '/soluciones/selecciona' },
     { label: 'Necesito desarrollar a nuestros líderes', offer: 'Insight 360', href: '/soluciones/insight-360' },
   ] },
