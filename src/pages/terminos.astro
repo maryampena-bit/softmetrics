@@ -1,7 +1,7 @@
 ---
 import Legal from '../layouts/Legal.astro';
-import { site } from '../config/site';
+import { Content } from '../content/legal/terminos.md';
 ---
-<Legal title="Términos de servicio">
-  <p>Estamos terminando la versión final de este documento. Si necesitas consultarlo antes de contratar, escríbenos a <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+<Legal title="Términos y condiciones del servicio" updated="27 de octubre de 2026">
+  <Content />
 </Legal>
