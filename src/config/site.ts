@@ -36,7 +36,6 @@ export const soluciones = [
   { label: 'Selecciona', href: '/soluciones/selecciona', desc: 'Contrata a quien dará resultados', momento: 'Seleccionar' },
   { label: 'Evaluaciones bajo demanda', href: '/soluciones/evaluaciones-bajo-demanda', desc: 'Recomendación argumentada por candidato', momento: 'Seleccionar' },
   { label: 'Insight 360', href: '/soluciones/insight-360', desc: '360 corporativo con acompañamiento completo', momento: 'Desarrollar' },
-  { label: 'Orientación profesional', href: '/soluciones/orientacion-profesional', desc: 'Mentoría 1:1 en rutas de 3 a 10 sesiones', momento: 'Desarrollar' },
   { label: 'RADAR 2027', href: '/soluciones/radar', desc: 'Dónde se frena la ejecución de tu negocio', momento: 'Diagnosticar' },
 ];
 
@@ -45,7 +44,6 @@ export const perfiles = [
   { label: 'Líderes de talento', items: ['Selecciona', 'Insight 360'] },
   { label: 'Empresas que contratan poco', items: ['Evaluaciones bajo demanda'] },
   { label: 'Consultores y psicólogos', items: ['Evaluaciones bajo demanda'], extra: { label: 'Consultores asociados', href: '/asociados', desc: 'Pedidos de socios comerciales' } },
-  { label: 'Profesionales', items: ['Orientación profesional'] },
 ];
 
 // Selector del inicio: el visitante ve rol y problema; la solución
@@ -68,9 +66,5 @@ export const selector = [
   { id: 'consultor', label: 'Consultor o psicólogo', problems: [
     { label: 'Evalúo varios candidatos al mes para mis clientes', offer: 'Selecciona para consultores', href: '/agenda?solucion=consultores' },
     { label: 'Hago pedidos puntuales como socio', offer: 'Consultores asociados', href: '/asociados' },
-  ] },
-  { id: 'profesional', label: 'Profesional', problems: [
-    { label: 'Me siento estancado o sin dirección', offer: 'Orientación profesional', href: '/soluciones/orientacion-profesional' },
-    { label: 'Quiero crecer como líder', offer: 'Orientación profesional · Líderes en transición', href: '/soluciones/orientacion-profesional#lideres' },
   ] },
 ];
