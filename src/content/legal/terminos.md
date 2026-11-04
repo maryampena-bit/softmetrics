@@ -108,7 +108,7 @@ Estos términos se rigen por las leyes de la República Bolivariana de Venezuela
 2. **Invitación.** Enviamos el acceso a cada evaluado dentro de las 24 horas hábiles siguientes a la validación del pago.
 3. **Informe.** Lo enviamos por correo dentro de las 24 horas hábiles siguientes a que el evaluado termine de responder.
 4. **Tipos de informe y precios.** Los publicados en la página de [evaluaciones On Demand](/soluciones/evaluaciones-bajo-demanda) al momento del pedido.
-5. **Evaluados que no responden.** Si el evaluado no completa la evaluación, se cobra el 50 % de la licencia cuando solo se envió la invitación y el 75 % cuando se enviaron recordatorios o se cambió el correo. Como el pago es anticipado, se reconoce un crédito del 50 % del costo, válido por 30 días para otro pedido. Recomendamos confirmar con el evaluado su disponibilidad antes de pedir la evaluación.
+5. **Evaluados que no responden.** Si el evaluado no completa la evaluación, se cobra el 50 % de la licencia cuando solo se envió la invitación y el 75 % cuando se enviaron recordatorios o se cambió el correo. Como el pago es anticipado, la parte no cobrada (50 % o 25 %, según el caso) se reconoce como crédito, válido por 30 días para otro pedido. Recomendamos confirmar con el evaluado su disponibilidad antes de pedir la evaluación.
 6. **Vigencia del acceso.** El evaluado tiene 30 días como máximo para responder desde que recibe la invitación.
 
 ## Anexo B. Suscripciones de empresas
