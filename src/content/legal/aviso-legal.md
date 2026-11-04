@@ -2,7 +2,7 @@
 
 Softmetrics es una marca de Kompas Consultores KC, C.A., sociedad venezolana con RIF J-40796921-8 y domicilio en Caracas, Venezuela. Contacto: [legal@softmetrics.com.ve](mailto:legal@softmetrics.com.ve).
 
-Estas condiciones regulan el uso de softmetrics.co y de sus páginas. Al navegar por el sitio las aceptas. La compra de servicios se rige además por los [Términos y condiciones del servicio](/terminos), y el uso de tus datos por la [Política de privacidad](/privacidad).
+Estas condiciones regulan el uso de www.softmetrics.co y de sus páginas. Al navegar por el sitio las aceptas. La compra de servicios se rige además por los [Términos y condiciones del servicio](/terminos), y el uso de tus datos por la [Política de privacidad](/privacidad).
 
 ## Uso del sitio
 

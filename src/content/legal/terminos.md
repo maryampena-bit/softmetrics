@@ -108,8 +108,8 @@ Estos términos se rigen por las leyes de la República Bolivariana de Venezuela
 2. **Invitación.** Enviamos el acceso a cada evaluado dentro de las 24 horas hábiles siguientes a la validación del pago.
 3. **Informe.** Lo enviamos por correo dentro de las 24 horas hábiles siguientes a que el evaluado termine de responder.
 4. **Tipos de informe y precios.** Los publicados en la página de [evaluaciones On Demand](/soluciones/evaluaciones-bajo-demanda) al momento del pedido.
-5. **Evaluados que no responden.** Si el evaluado no completa la evaluación, se cobra el 50 % de la licencia cuando solo se envió la invitación y el 75 % cuando se enviaron recordatorios o se cambió el correo. **[PENDIENTE: como el pago es anticipado, confirmar si la parte no cobrada se devuelve como crédito para otro pedido.]** Recomendamos confirmar con el evaluado su disponibilidad antes de pedir la evaluación.
-6. **Vigencia del acceso.** El evaluado tiene **[PENDIENTE: número de días]** para responder desde que recibe la invitación.
+5. **Evaluados que no responden.** Si el evaluado no completa la evaluación, se cobra el 50 % de la licencia cuando solo se envió la invitación y el 75 % cuando se enviaron recordatorios o se cambió el correo. Como el pago es anticipado, se reconoce un crédito del 50 % del costo, válido por 30 días para otro pedido. Recomendamos confirmar con el evaluado su disponibilidad antes de pedir la evaluación.
+6. **Vigencia del acceso.** El evaluado tiene 30 días como máximo para responder desde que recibe la invitación.
 
 ## Anexo B. Suscripciones de empresas
 
@@ -132,5 +132,5 @@ Estos términos se rigen por las leyes de la República Bolivariana de Venezuela
 1. **Propuesta.** Las actividades, el cronograma, los entregables, los plazos y los requisitos mínimos de participación son los de la propuesta aceptada.
 2. **Presupuesto.** Se basa en un estimado de horas de consultoría, configuración, soporte y gestión, según la experiencia en proyectos similares.
 3. **Cambios.** Las posposiciones, los cambios de alcance o de parámetros y los nuevos requerimientos pedidos por el cliente durante el proyecto pueden generar cargos adicionales por horas.
-4. **Reunión de arranque y recomendaciones.** Si el cliente no asiste a la reunión de arranque o no sigue las recomendaciones del equipo de Softmetrics, podemos facturar las horas adicionales que eso genere.
+4. **Reunión de arranque y recomendaciones.** Si el cliente no asiste a la reunión de arranque o no sigue las recomendaciones del equipo de Softmetrics, podemos facturar las horas adicionales que generen las decisiones tomadas por desconocimiento de las buenas prácticas que se comparten en esa reunión.
 5. **Confidencialidad de los resultados.** En los diagnósticos RADAR, los resultados se entregan por grupos de más de 5 personas. En los 360 se aplican las reglas del Aviso para participantes.
