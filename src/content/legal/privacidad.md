@@ -33,7 +33,7 @@ Solo entregaremos datos a una autoridad si una orden judicial o una ley nos obli
 
 ## 4. Cuánto tiempo los guardamos
 
-- **Consultas y solicitudes de reunión:** **[PENDIENTE: plazo, por ejemplo 12 meses]** desde el último contacto.
+- **Consultas y solicitudes de reunión:** 24 meses desde el último contacto.
 - **Datos de facturación:** el tiempo que exija la normativa tributaria venezolana.
 - **Clientes y usuarios administradores:** mientras el servicio esté activo. Al terminar, eliminamos las credenciales y los datos de uso.
 - **Profesionales que contratan directamente:** mientras mantengas activo el servicio contratado. Luego conservamos solo las respuestas anonimizadas para mejorar nuestras pruebas.
