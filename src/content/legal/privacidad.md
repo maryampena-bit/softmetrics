@@ -24,7 +24,7 @@ Solo con proveedores que necesitamos para operar, obligados a usarlos únicament
 
 - **Alojamiento de la plataforma:** Amazon Web Services (AWS), en Estados Unidos.
 - **Sitio web y formularios:** Vercel, que aloja este sitio, y Typeform, donde se reciben los formularios de pedido, agenda y soporte, ambos en Estados Unidos.
-- **Correo y gestión interna:** **[PENDIENTE: proveedor de correo]** y Notion, donde registramos los pedidos.
+- **Correo y gestión interna:** Google Workspace, con el que enviamos invitaciones, informes y comunicaciones, y Notion, donde registramos los pedidos.
 - **Pagos:** PayPal y las entidades bancarias de Pago Móvil, transferencias y Zelle.
 
 Algunos de estos proveedores están fuera de Venezuela. Al usar nuestros servicios aceptas esa transferencia internacional, que limitamos a lo necesario.
