@@ -54,6 +54,8 @@ Guía para hacer cambios en softmetrics.co sin romper nada, la haga Maryam, Clau
 
 Las páginas de campaña (`variant="campaign"`) no tienen menú y usan un pie corto. No se enlazan desde el menú ni desde el inicio.
 
+**En pausa (noviembre de 2026):** Selecciona para consultores y Orientación profesional. Sus páginas siguen existiendo pero nada del sitio las enlaza; el selector del inicio lleva a los consultores a Evaluaciones bajo demanda y `/consultores` redirige ahí. Para reactivarlas, revertir esos dos cambios en `src/config/site.ts` y `vercel.json`.
+
 ## Cambios frecuentes
 
 ### Cambiar un texto

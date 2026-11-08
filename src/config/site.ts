@@ -64,7 +64,7 @@ export const selector = [
     { label: 'Tengo 3 finalistas y no sé a quién elegir', offer: 'Evaluaciones bajo demanda · Terna', href: '/soluciones/evaluaciones-bajo-demanda#opciones' },
   ] },
   { id: 'consultor', label: 'Consultor o psicólogo', problems: [
-    { label: 'Evalúo varios candidatos al mes para mis clientes', offer: 'Selecciona para consultores', href: '/agenda?solucion=consultores' },
+    { label: 'Evalúo varios candidatos al mes para mis clientes', offer: 'Evaluaciones bajo demanda', href: '/soluciones/evaluaciones-bajo-demanda' },
     { label: 'Hago pedidos puntuales como socio', offer: 'Consultores asociados', href: '/asociados' },
   ] },
 ];

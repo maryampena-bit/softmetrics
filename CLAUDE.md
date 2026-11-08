@@ -9,3 +9,4 @@ Sitio estático en Astro, publicado en Vercel (equipo SOFTMETRICS's projects).
 - Precios sin IVA; para Venezuela se muestra base + IVA + total.
 - `npm run build` genera `dist/`.
 - `docs/README.md`: guía de edición para personas (dónde está cada cosa, cambios frecuentes, marca, dominio). Mantenerla al día cuando cambie la estructura.
+- En pausa: Selecciona para consultores y Orientación profesional (páginas sin enlaces desde el sitio). Ver `docs/README.md`.
