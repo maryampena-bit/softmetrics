@@ -1,6 +1,19 @@
 {
   "redirects": [
-    { "source": "/asociados", "destination": "https://softmetrics.typeform.com/pedidos", "permanent": false },
-    { "source": "/consultores", "destination": "/soluciones/evaluaciones-bajo-demanda", "permanent": false }
+    {
+      "source": "/asociados",
+      "destination": "https://softmetrics.typeform.com/pedidos",
+      "permanent": false
+    },
+    {
+      "source": "/consultores",
+      "destination": "/soluciones/evaluaciones-bajo-demanda",
+      "permanent": false
+    },
+    {
+      "source": "/elegir-pruebas-para-evaluacion",
+      "destination": "/recursos/elegir-pruebas",
+      "permanent": true
+    }
   ]
 }

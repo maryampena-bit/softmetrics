@@ -1,0 +1,196 @@
+---
+import Base from '../../layouts/Base.astro';
+import { site } from '../../config/site';
+
+const IPR = [
+  { id: 'adm', name: 'IPR Administrativo', full: 'IPR - Personal Administrativo', desc: 'Asistentes y analistas' },
+  { id: 'cli', name: 'IPR Atención al Cliente', full: 'IPR - Personalidad Atención al Cliente', desc: 'Personal de atención al cliente' },
+  { id: 'ven', name: 'IPR Ventas', full: 'IPR - Personalidad de Ventas', desc: 'Responsabilidades comerciales' },
+  { id: 'ope', name: 'IPR Operario', full: 'IPR - Personalidad en Operario', desc: 'Trabajo principalmente manual' },
+  { id: 'ger', name: 'IPR Gerencial', full: 'IPR - Personalidad Gerencial', desc: 'Gerentes y directores' },
+  { id: 'sup', name: 'IPR Supervisorio', full: 'IPR - Personalidad Supervisoria', desc: 'Responsabilidad supervisoria' },
+  { id: 'tec', name: 'IPR Técnico Profesional', full: 'IPR - Personalidad Técnico Profesional', desc: 'Formación superior, sin supervisión' },
+];
+const BH = [
+  { id: 'calc', name: 'BH - Cálculo', question: '¿Qué tan importante es resolver problemas matemáticos en este puesto?', context: 'Se refiere a la capacidad de comprender relaciones numéricas y resolver operaciones aritméticas mentalmente, sin apoyarse en calculadoras o herramientas.', desc: 'Comprensión de relaciones matemáticas y resolución de problemas aritméticos' },
+  { id: 'clas', name: 'BH - Clasificación', question: '¿Qué tan importante es actuar con método y orden en este puesto?', context: 'Se refiere a la capacidad de organizar, clasificar y procesar información de forma sistemática en entornos que exigen actuación ordenada.', desc: 'Capacidad para actuar con método y orden ante tareas de clasificación' },
+  { id: 'intel', name: 'BH - Inteligencia General', question: '¿Qué tan importante es la capacidad general para comprender, aprender y adaptarse en este puesto?', context: 'Se refiere a la aptitud mental amplia para entender instrucciones complejas, aprender nuevos procesos y resolver situaciones diversas.', desc: 'Aptitud mental general: comprensión, aprendizaje y adaptación' },
+  { id: 'orto', name: 'BH - Ortografía', question: '¿Qué tan importante es redactar o revisar textos escritos con corrección en este puesto?', context: 'Se refiere al conocimiento ortográfico que va más allá de lo que corrigen los procesadores de texto: origen y escritura correcta de palabras de uso común.', desc: 'Conocimiento ortográfico más allá de los correctores automáticos' },
+  { id: 'abs', name: 'BH - Pensamiento Abstracto', question: '¿Qué tan importante es identificar patrones y resolver problemas lógicos en este puesto?', context: 'Se refiere a la capacidad de razonamiento analítico: identificar secuencias, relaciones y patrones en situaciones que no tienen una respuesta obvia.', desc: 'Razonamiento analítico e identificación de patrones lógicos' },
+  { id: 'raz', name: 'BH - Razonamiento', question: '¿Qué tan importante es interpretar gráficos, tablas o datos de negocio en este puesto?', context: 'Se refiere a la capacidad de leer e interpretar información presentada visualmente en gráficos con datos numéricos o estadísticos para tomar decisiones.', desc: 'Comprensión e interpretación de gráficos y datos estadísticos de negocio' },
+  { id: 'ver', name: 'BH - Verificación', question: '¿Qué tan importante es la atención al detalle y la concentración precisa en este puesto?', context: 'Se refiere a la capacidad de detectar diferencias sutiles entre estímulos muy similares, crítica para tareas donde los errores tienen consecuencias importantes.', desc: 'Atención selectiva y concentración mental para detectar errores' },
+  { id: 'voc', name: 'BH - Vocabulario', question: '¿Qué tan importante es comunicarse con claridad y precisión en este puesto?', context: 'Se refiere a la amplitud de vocabulario y comprensión del significado de las palabras: un indicador de cultura general y capacidad de comunicación oral y escrita.', desc: 'Amplitud de vocabulario y precisión en la comunicación' },
+];
+const OPTS = ['No aplica', 'Deseable', 'Crítico'];
+---
+<Base title="Cómo elegir las pruebas de una evaluación" description="Responde tres preguntas y obtén la batería de pruebas recomendada para el cargo que vas a evaluar en Selecciona.">
+  <section style="background: var(--accent-tint); padding: 56px 0 40px">
+    <div class="wrap" style="display: flex; flex-direction: column; gap: 14px; max-width: 820px">
+      <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent)">Recurso · Selecciona</span>
+      <h1 class="big" style="font-size: 40px; line-height: 1.1; font-weight: 800; margin: 0; letter-spacing: -0.02em">Cómo elegir las pruebas de una evaluación</h1>
+      <p style="margin: 0; font-size: 17px; line-height: 1.6; color: var(--ink-2)">Responde tres preguntas sobre el cargo y te mostramos qué pruebas incluir: el perfil IPR, las pruebas de habilidades (BH) críticas y deseables, y si conviene la prueba motivacional.</p>
+    </div>
+  </section>
+
+  <section style="padding: 40px 0 88px">
+    <div class="wrap" style="max-width: 820px">
+      <div class="wz" data-wz>
+        <ol class="wz-steps" aria-label="Progreso">
+          <li data-dot="1" class="on">1</li><li class="ln"></li><li data-dot="2">2</li><li class="ln"></li><li data-dot="3">3</li><li class="ln"></li><li data-dot="4">✓</li>
+        </ol>
+        <p class="wz-label" data-label>Paso 1 de 3 · Perfil del cargo</p>
+
+        <div class="wz-screen on" data-screen="1">
+          <h2>¿Cuál es el perfil del cargo?</h2>
+          <p class="wz-sub">Elige el IPR que mejor describe el rol de la persona que vas a evaluar.</p>
+          <div class="wz-grid" role="radiogroup" aria-label="Perfil del cargo">
+            {IPR.map((p) => (
+              <button type="button" class="wz-card" role="radio" aria-checked="false" data-ipr={p.id}>
+                <strong>{p.name}</strong><span>{p.desc}</span>
+              </button>
+            ))}
+          </div>
+          <div class="wz-nav"><span></span><button type="button" class="btn btn-primary" data-next="2" disabled>Siguiente</button></div>
+        </div>
+
+        <div class="wz-screen" data-screen="2">
+          <h2>¿Qué tan importante es cada capacidad en este puesto?</h2>
+          <p class="wz-sub">Para cada habilidad, indica si no aplica, es deseable o es crítica en el día a día del rol.</p>
+          <div class="wz-list">
+            {BH.map((b) => (
+              <fieldset class="wz-item" data-bh={b.id}>
+                <legend>{b.question}</legend>
+                <p>{b.context}</p>
+                <div class="wz-scale">
+                  {OPTS.map((o, i) => (
+                    <label><input type="radio" name={`bh-${b.id}`} value={i} /><span>{o}</span></label>
+                  ))}
+                </div>
+              </fieldset>
+            ))}
+          </div>
+          <div class="wz-nav"><button type="button" class="btn btn-outline" data-next="1">Atrás</button><button type="button" class="btn btn-primary" data-next="3" data-bh-next disabled>Siguiente (0/{BH.length})</button></div>
+        </div>
+
+        <div class="wz-screen" data-screen="3">
+          <h2>¿Este proceso incluye posibilidad de liderazgo o promoción?</h2>
+          <p class="wz-sub">La prueba motivacional muestra la orientación de carrera del candidato y si es afín a posiciones de mayor responsabilidad. Es especialmente útil en promociones internas y en roles con proyección de liderazgo.</p>
+          <div class="wz-grid one" role="radiogroup" aria-label="Prueba motivacional">
+            <button type="button" class="wz-card" role="radio" aria-checked="false" data-motiv="1"><strong>Sí, incluir la prueba motivacional</strong><span>El rol tiene responsabilidades de liderazgo, es una promoción interna o quiero conocer la orientación de carrera del candidato.</span></button>
+            <button type="button" class="wz-card" role="radio" aria-checked="false" data-motiv="0"><strong>No es necesario en este proceso</strong><span>El rol es operativo o técnico y la orientación de carrera no pesa en esta decisión.</span></button>
+          </div>
+          <div class="wz-nav"><button type="button" class="btn btn-outline" data-next="2">Atrás</button><button type="button" class="btn btn-primary" data-next="4" data-motiv-next disabled>Ver batería recomendada</button></div>
+        </div>
+
+        <div class="wz-screen" data-screen="4">
+          <div data-result></div>
+          <div class="wz-nav"><button type="button" class="btn btn-outline" data-reset>Comenzar de nuevo</button><a class="btn btn-primary" href="/soporte">¿Dudas? Escríbenos</a></div>
+        </div>
+      </div>
+      <p style="margin: 28px 0 0; font-size: 15px; color: var(--ink-3)">¿Aún no tienes el perfil de competencias del cargo? <a href="/recursos/perfil-de-competencias" style="font-weight: 600">Créalo gratis aquí</a>. ¿Prefieres escribirnos? <a href={site.whatsapp} style="font-weight: 600">WhatsApp</a></p>
+    </div>
+  </section>
+
+  <script type="application/json" id="wz-data" set:html={JSON.stringify({ IPR, BH })}></script>
+  <script is:inline>
+    (function () {
+      var d = JSON.parse(document.getElementById('wz-data').textContent);
+      var root = document.querySelector('[data-wz]');
+      var ipr = null, motiv = null, bh = {};
+      var labels = ['', 'Paso 1 de 3 · Perfil del cargo', 'Paso 2 de 3 · Relevancia de cada capacidad', 'Paso 3 de 3 · Prueba motivacional', 'Resultado'];
+      function go(n) {
+        root.querySelectorAll('[data-screen]').forEach(function (s) { s.classList.toggle('on', s.dataset.screen == n); });
+        root.querySelector('[data-label]').textContent = labels[n];
+        root.querySelectorAll('[data-dot]').forEach(function (el) { var i = +el.dataset.dot; el.className = i < n ? 'done' : i == n ? 'on' : ''; });
+        if (n == 4) render();
+        root.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      function pick(sel, el) { root.querySelectorAll(sel).forEach(function (c) { c.setAttribute('aria-checked', c === el ? 'true' : 'false'); }); }
+      root.querySelectorAll('[data-ipr]').forEach(function (c) { c.onclick = function () { ipr = c.dataset.ipr; pick('[data-ipr]', c); root.querySelector('[data-next="2"]').disabled = false; }; });
+      root.querySelectorAll('[data-motiv]').forEach(function (c) { c.onclick = function () { motiv = c.dataset.motiv === '1'; pick('[data-motiv]', c); root.querySelector('[data-motiv-next]').disabled = false; }; });
+      root.querySelectorAll('.wz-item input').forEach(function (r) {
+        r.onchange = function () {
+          bh[r.name.slice(3)] = +r.value;
+          r.closest('.wz-item').classList.add('done');
+          var n = Object.keys(bh).length, t = d.BH.length, b = root.querySelector('[data-bh-next]');
+          b.disabled = n < t; b.textContent = n < t ? 'Siguiente (' + n + '/' + t + ')' : 'Siguiente';
+        };
+      });
+      root.querySelectorAll('[data-next]').forEach(function (b) { b.onclick = function () { go(+b.dataset.next); }; });
+      function tag(t, kind, badge) { return '<div class="wz-test ' + kind + '"><span class="wz-badge">' + badge + '</span><strong>' + t.name + '</strong><span>' + t.desc + '</span></div>'; }
+      function render() {
+        var p = d.IPR.filter(function (x) { return x.id === ipr; })[0];
+        var crit = d.BH.filter(function (b) { return bh[b.id] === 2; }), des = d.BH.filter(function (b) { return bh[b.id] === 1; });
+        var h = '<div class="wz-head"><span>Perfil seleccionado</span><strong>' + p.full + '</strong><em>' + p.desc + '</em></div>';
+        if (crit.length) h += '<h3>Pruebas prioritarias</h3><div class="wz-tests">' + crit.map(function (t) { return tag(t, 'crit', 'Crítico'); }).join('') + '</div>';
+        if (des.length) h += '<h3>Pruebas opcionales</h3><div class="wz-tests">' + des.map(function (t) { return tag(t, 'des', 'Deseable'); }).join('') + '</div>';
+        if (!crit.length && !des.length) h += '<h3>Pruebas BH</h3><p class="wz-sub">No marcaste ninguna capacidad como aplicable. Solo se aplicaría el perfil IPR seleccionado.</p>';
+        if (motiv) h += '<h3>Prueba adicional</h3><div class="wz-tests">' + tag({ name: 'Prueba Motivacional', desc: 'Orientación de carrera y afinidad con posiciones de liderazgo o promoción' }, 'mot', 'Recomendada') + '</div>';
+        root.querySelector('[data-result]').innerHTML = h;
+        window.va && window.va('event', { name: 'elegir_pruebas_resultado', data: { ipr: ipr, criticas: crit.length, motivacional: !!motiv } });
+      }
+      root.querySelector('[data-reset]').onclick = function () {
+        ipr = null; motiv = null; bh = {};
+        root.querySelectorAll('[role=radio]').forEach(function (c) { c.setAttribute('aria-checked', 'false'); });
+        root.querySelectorAll('.wz-item input').forEach(function (r) { r.checked = false; });
+        root.querySelectorAll('.wz-item').forEach(function (i) { i.classList.remove('done'); });
+        root.querySelector('[data-next="2"]').disabled = true; root.querySelector('[data-motiv-next]').disabled = true;
+        var b = root.querySelector('[data-bh-next]'); b.disabled = true; b.textContent = 'Siguiente (0/' + d.BH.length + ')';
+        go(1);
+      };
+    })();
+  </script>
+  <style is:global>
+    .wz { border: 1px solid var(--line); border-radius: 16px; padding: 32px; background: #fff; scroll-margin-top: 96px; }
+    .wz-steps { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: 6px; }
+    .wz-steps li[data-dot] { width: 30px; height: 30px; border-radius: 50%; border: 1.5px solid var(--line); color: var(--ink-3); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; flex: none; }
+    .wz-steps li.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .wz-steps li.done { background: var(--accent-tint); border-color: var(--accent); color: var(--accent); }
+    .wz-steps .ln { flex: 1; height: 1px; background: var(--line); }
+    .wz-label { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ink-3); margin: 10px 0 24px; }
+    .wz-screen { display: none; }
+    .wz-screen.on { display: block; }
+    .wz h2 { font-size: 24px; font-weight: 700; margin: 0 0 8px; letter-spacing: -0.01em; }
+    .wz h3 { font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin: 24px 0 10px; }
+    .wz-sub { margin: 0 0 20px; font-size: 15px; line-height: 1.6; color: var(--ink-2); }
+    .wz-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }
+    .wz-grid.one { grid-template-columns: 1fr; }
+    .wz-card { text-align: left; font: inherit; color: var(--navy); background: #fff; border: 1.5px solid var(--line); border-radius: 12px; padding: 14px 16px; cursor: pointer; display: flex; flex-direction: column; gap: 4px; }
+    .wz-card strong { font-size: 15px; }
+    .wz-card span { font-size: 14px; color: var(--ink-3); line-height: 1.45; }
+    .wz-card:hover { border-color: var(--accent); }
+    .wz-card[aria-checked="true"] { border-color: var(--accent); background: var(--accent-tint); }
+    .wz-list { display: flex; flex-direction: column; gap: 12px; }
+    .wz-item { border: 1.5px solid var(--line); border-radius: 12px; padding: 16px 18px; margin: 0; }
+    .wz-item.done { border-color: #B9CCF5; }
+    .wz-item legend { font-weight: 600; font-size: 15px; padding: 0; float: left; width: 100%; margin-bottom: 4px; }
+    .wz-item p { clear: both; margin: 0 0 12px; font-size: 14px; line-height: 1.5; color: var(--ink-3); }
+    .wz-scale { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .wz-scale label { position: relative; }
+    .wz-scale input { position: absolute; opacity: 0; }
+    .wz-scale span { display: flex; justify-content: center; align-items: center; min-height: 40px; border: 1.5px solid var(--line); border-radius: 999px; font-size: 14px; font-weight: 600; cursor: pointer; }
+    .wz-scale input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .wz-scale label:nth-child(1) input:checked + span { background: #EEF1F7; border-color: #9AA3B8; }
+    .wz-scale label:nth-child(2) input:checked + span { background: var(--accent-tint); border-color: var(--accent); color: var(--accent); }
+    .wz-scale label:nth-child(3) input:checked + span { background: var(--navy); border-color: var(--navy); color: #fff; }
+    .wz-nav { display: flex; justify-content: space-between; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
+    .wz-nav .btn { border: 0; cursor: pointer; font-family: inherit; }
+    .wz-nav .btn-outline { border: 1.5px solid var(--navy); background: #fff; }
+    .wz-nav .btn[disabled] { opacity: 0.45; cursor: not-allowed; }
+    .wz-head { background: var(--surface); border-radius: 12px; padding: 18px 20px; display: flex; flex-direction: column; gap: 4px; }
+    .wz-head span { font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); }
+    .wz-head strong { font-size: 20px; }
+    .wz-head em { font-style: normal; color: var(--ink-2); font-size: 15px; }
+    .wz-tests { display: flex; flex-direction: column; gap: 8px; }
+    .wz-test { border: 1.5px solid var(--line); border-radius: 12px; padding: 12px 16px; display: flex; flex-direction: column; gap: 2px; }
+    .wz-test strong { font-size: 15px; }
+    .wz-test > span:last-child { font-size: 14px; color: var(--ink-3); }
+    .wz-badge { align-self: flex-start; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; margin-bottom: 4px; }
+    .wz-test.crit { border-color: var(--navy); }
+    .wz-test.crit .wz-badge { background: var(--navy); color: #fff; }
+    .wz-test.des .wz-badge { background: var(--accent-tint); color: var(--accent); }
+    .wz-test.mot { border-color: #B500D4; }
+    .wz-test.mot .wz-badge { background: #F6E3FA; color: #8A00A3; }
+    @media (max-width: 600px) { .wz { padding: 20px; } .wz-scale span { font-size: 13px; } }
+  </style>
+</Base>
