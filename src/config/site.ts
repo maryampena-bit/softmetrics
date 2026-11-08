@@ -17,7 +17,7 @@ export const site = {
 // Formularios de Typeform. Si un valor está vacío, la página muestra
 // una alternativa (WhatsApp y agenda) en lugar del formulario.
 export const forms = {
-  pedido: '', // Typeform de pedido de evaluación (individual o terna)
+  pedido: 'https://softmetrics.typeform.com/ondemand', // Typeform de pedido de evaluación (individual o terna)
   agenda: 'https://softmetrics.typeform.com/Leads', // Typeform único de Agenda con campo oculto "solucion"
   radar: 'https://softmetrics.typeform.com/radar',
   asociados: 'https://softmetrics.typeform.com/pedidos',
