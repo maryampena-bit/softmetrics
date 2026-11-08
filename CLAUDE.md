@@ -8,3 +8,4 @@ Sitio estático en Astro, publicado en Vercel (equipo SOFTMETRICS's projects).
 - Marca: Navy #011D66, Blue 600 #0159FD, Inter / Anton / JetBrains Mono, botones en píldora, sin emoji.
 - Precios sin IVA; para Venezuela se muestra base + IVA + total.
 - `npm run build` genera `dist/`.
+- `docs/README.md`: guía de edición para personas (dónde está cada cosa, cambios frecuentes, marca, dominio). Mantenerla al día cuando cambie la estructura.
