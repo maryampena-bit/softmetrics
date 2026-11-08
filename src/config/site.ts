@@ -11,7 +11,7 @@ export const site = {
   email: 'sales@softmetrics.co',
   whatsapp: 'https://wa.me/584122443537',
   agendaCalendar: 'https://calendar.app.google/2cY9zf5WJmzWKcFq9',
-  perfilAgente: 'https://gemini.google.com/gem/1YqwXhkZ2hWBwpDLc1qOrpMrACkJRDKOj?usp=sharing',
+  perfilAgente: 'https://gemini.google.com/gem/1SSA4Hebb1E7iNj1ttNpSUPeAMZGyz3a1?usp=sharing',
 };
 
 // Formularios de Typeform. Si un valor está vacío, la página muestra
