@@ -1,0 +1,8 @@
+---
+import Base from '../layouts/Base.astro';
+import RawPage from '../components/RawPage.astro';
+import html from '../content/nosotros.html?raw';
+---
+<Base title="Nosotros" description="Desde 2004 medimos el factor humano que decide si una estrategia se ejecuta. Trayectoria, filosofía y fundadora de Softmetrics." variant="site">
+  <RawPage html={html} />
+</Base>

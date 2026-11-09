@@ -48,6 +48,7 @@ Guía para hacer cambios en softmetrics.co sin romper nada, la haga Maryam, Clau
 | /soluciones/orientacion-profesional | `soluciones/orientacion-profesional.astro` | `orientacion.html` | No, solo campañas |
 | /recursos/perfil-de-competencias | `recursos/perfil-de-competencias.astro` | `perfil.html` | No |
 | /recursos/elegir-pruebas | `recursos/elegir-pruebas.astro` | Asistente de 3 pasos (IPR, pruebas BH, motivacional); las listas de pruebas están al inicio del archivo | No (enlazada desde Selecciona) |
+| /nosotros | `nosotros.astro` | `nosotros.html` (foto en `public/img/equipo/maryam-pena.webp`) | Sí |
 | /pedido/evaluacion | `pedido/evaluacion.astro` | Precios + Typeform de pedido | Botón del menú |
 | /agenda | `agenda.astro` | Typeform Leads | Botón del menú |
 | /soporte | `soporte.astro` | Typeform cliente y soporte | Sí |

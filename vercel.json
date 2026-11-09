@@ -14,6 +14,11 @@
       "source": "/elegir-pruebas-para-evaluacion",
       "destination": "/recursos/elegir-pruebas",
       "permanent": true
+    },
+    {
+      "source": "/conocenos",
+      "destination": "/nosotros",
+      "permanent": true
     }
   ]
 }
