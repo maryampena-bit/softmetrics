@@ -12,6 +12,7 @@ export const site = {
   whatsapp: 'https://wa.me/584122443537',
   agendaCalendar: 'https://calendar.app.google/2cY9zf5WJmzWKcFq9',
   perfilAgente: 'https://gemini.google.com/gem/c442592fdb26',
+  appSelecciona: 'https://app.softmetrics.co/selecciona', // Acceso a la aplicación (botón del encabezado)
 };
 
 // Formularios de Typeform. Si un valor está vacío, la página muestra

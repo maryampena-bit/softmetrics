@@ -40,7 +40,10 @@ a:hover { color: var(--navy); }
 .btn-primary { background: var(--accent); color: #FFFFFF; }
 .btn-primary:hover { background: var(--navy); color: #FFFFFF; }
 .btn-outline { border: 1.5px solid var(--navy); color: var(--navy); }
+.btn-app { background: var(--navy); color: #FFFFFF; }
+.btn-app:hover { background: var(--accent); color: #FFFFFF; }
 .header-ctas { display: flex; gap: 10px; }
+.header-ctas .btn, .nav > a, .nav summary { white-space: nowrap; }
 .mobile-menu { display: none; }
 .mobile-menu summary { list-style: none; cursor: pointer; min-height: 44px; min-width: 44px; display: inline-flex; align-items: center; justify-content: center; }
 .mobile-menu summary::-webkit-details-marker { display: none; }
@@ -56,7 +59,7 @@ a:hover { color: var(--navy); }
 /* Formularios incrustados */
 .embed-frame { width: 100%; min-height: 620px; border: 0; border-radius: 16px; background: #FFFFFF; }
 
-@media (max-width: 960px) {
+@media (max-width: 1240px) {
   .nav, .header-ctas { display: none !important; }
   .mobile-menu { display: block; }
 }
