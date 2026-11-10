@@ -1,6 +1,6 @@
 # Guía de edición de la web de Softmetrics
 
-Guía para hacer cambios en softmetrics.co sin romper nada, la haga Maryam, Claude u otra persona. Actualizada el 8 de noviembre de 2026.
+Guía para hacer cambios en softmetrics.co sin romper nada, la haga Maryam, Claude u otra persona. Actualizada el 10 de noviembre de 2026.
 
 ## Cómo funciona
 
@@ -14,7 +14,7 @@ Guía para hacer cambios en softmetrics.co sin romper nada, la haga Maryam, Clau
 
 | Quiero cambiar… | Archivo |
 | --- | --- |
-| Un enlace de formulario, el WhatsApp, el correo, el calendario o el agente de Gemini | `src/config/site.ts` |
+| Un enlace de formulario, el WhatsApp, el correo, el calendario, el agente de Gemini o el acceso a la aplicación (botón Selecciona del menú) | `src/config/site.ts` |
 | Las cifras de autoridad (100+, 5 países…) | `src/config/site.ts` → `cifras` |
 | Las soluciones del menú y del pie | `src/config/site.ts` → `soluciones` y `perfiles` |
 | Los roles y problemas del selector del inicio | `src/config/site.ts` → `selector` |
