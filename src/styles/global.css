@@ -70,3 +70,32 @@ a:hover { color: var(--navy); }
   .sec { padding-top: 56px !important; padding-bottom: 56px !important; }
   .cmp { font-size: 14px !important; }
 }
+
+/* Hero del inicio: foto de oficina que pasa de borrosa a nítida, teñida en azul de marca.
+   La animación ocurre una vez al cargar. Fotos en public/img/hero/. */
+.sm-hero { position: relative; overflow: hidden; background: #011D66; }
+.sm-hero__foto { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; display: block; filter: grayscale(1) contrast(1.1); animation: sm-enfoque 2.6s ease-out .3s both; }
+.sm-hero__capa { position: absolute; inset: 0; pointer-events: none; }
+.sm-hero__capa--azul { background: #0159FD; mix-blend-mode: multiply; }
+.sm-hero__capa--marino { background: #011D66; mix-blend-mode: lighten; }
+.sm-hero__capa--lectura { background: linear-gradient(90deg, rgba(1,29,102,.92) 0%, rgba(1,29,102,.78) 38%, rgba(1,29,102,0) 72%); }
+.sm-hero__barrido { position: absolute; top: 0; bottom: 0; left: -2%; width: 2px; background: #64E3CC; box-shadow: 0 0 24px 4px rgba(100,227,204,.6); opacity: 0; pointer-events: none; animation: sm-barrido 2.6s ease-in-out .3s both; }
+.sm-hero__contenido { position: relative; z-index: 2; }
+.sm-hero :focus-visible { outline-color: #64E3CC; }
+@keyframes sm-enfoque {
+  0%, 35% { filter: grayscale(1) contrast(1.1) blur(16px); transform: scale(1.1); }
+  100% { filter: grayscale(1) contrast(1.1) blur(0); transform: scale(1); }
+}
+@keyframes sm-barrido {
+  0%, 30% { left: -2%; opacity: 0; }
+  36% { opacity: 1; }
+  94% { opacity: 1; }
+  100% { left: 102%; opacity: 0; }
+}
+@media (max-width: 900px) {
+  .sm-hero__capa--lectura { background: rgba(1,29,102,.72); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sm-hero__foto { animation: none; }
+  .sm-hero__barrido { animation: none; opacity: 0; }
+}

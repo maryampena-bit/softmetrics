@@ -30,6 +30,7 @@ Guía para hacer cambios en softmetrics.co sin romper nada, la haga Maryam, Clau
 | Logos de Softmetrics | `public/img/logo.svg` y `public/img/logo-blanco.svg` |
 | Logos de clientes | `public/img/clientes/*.png` |
 | Fotos de testimonios | `public/img/testimonios/*.webp` (cuadradas, 192 px) |
+| Foto de fondo del inicio | `public/img/hero/oficina-1600.webp` (escritorio) y `oficina-960.webp` (móvil), proporción 2:1. Para cambiarla, reemplaza los dos archivos con los mismos nombres. El efecto de enfoque y el filtro azul están en `src/styles/global.css` (bloque "Hero del inicio") |
 | Favicon | `public/favicon.svg`, `public/favicon-32.png`, `public/apple-touch-icon.png` |
 | Redirecciones (direcciones viejas → nuevas) | `vercel.json` |
 
